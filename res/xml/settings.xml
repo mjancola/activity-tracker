@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+ 
+    <PreferenceCategory android:title="@string/pref_settings" >
+        <ListPreference
+            android:key="prefMinDurationMin"
+            android:entries="@array/MinutesEntries"
+            android:summary="@string/pref_min_duration_min_summary"
+            android:entryValues="@array/MinutesValuesAsMS"
+            android:title="@string/pref_min_duration_min" />
+        <ListPreference
+            android:key="prefActivityChangeThresholdSec"
+            android:entries="@array/SecondsEntries"
+            android:summary="@string/pref_activity_change_threshold_sec_summary"
+            android:entryValues="@array/SecondsValuesAsMS"
+            android:title="@string/pref_activity_change_threshold_sec" />
+        <ListPreference
+            android:key="prefStopThresholdMin"
+            android:entries="@array/MinutesEntries"
+            android:summary="@string/pref_stop_threshold_min_summary"
+            android:entryValues="@array/MinutesValuesAsMS"
+            android:title="@string/pref_stop_threshold_min" />
+        <ListPreference
+                android:key="prefMinSpeedMetersPerSecond"
+                android:entries="@array/MPHEntries"
+                android:summary="@string/pref_min_speed_mph_summary"
+                android:entryValues="@array/MPHAsMetersPerSecond"
+                android:title="@string/pref_min_speed_mph" />
+        <ListPreference
+                android:key="prefActivityChangePercent"
+                android:entries="@array/Percents"
+                android:summary="@string/pref_activity_change_percent_summary"
+                android:entryValues="@array/Percents"
+                android:title="@string/pref_activity_change_percent" />
+
+ <!-- not used - for reference
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="prefSendReport"
+            android:summary="@string/pref_send_report_summary"
+            android:title="@string/pref_send_report" >
+        </CheckBoxPreference>
+ 
+        <ListPreference
+            android:key="prefSyncFrequency"
+            android:entries="@array/syncFrequency"
+            android:summary="@string/pref_sync_frequency_summary"
+            android:entryValues="@array/syncFrequencyValues"
+            android:title="@string/pref_sync_frequency" />
+-->
+
+    </PreferenceCategory>
+ 
+</PreferenceScreen>

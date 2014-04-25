@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SlidingPaneLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/test"
+                android:padding="20dp"
+                android:textSize="30sp"
+                android:text="TODO"/>
+
+ </FrameLayout>
+ <FrameLayout
+         android:layout_width="match_parent"
+         android:layout_weight="0"
+         android:layout_height="fill_parent"
+         android:background="#000000FF"
+         android:orientation="vertical">
+            <ImageButton
+                    android:contentDescription="slider"
+                    android:layout_height="match_parent"
+                    android:layout_width="4dp"
+                    android:background="#ff244f99">
+
+            </ImageButton>
+     <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+         <LinearLayout
+                 android:id="@+id/speed_time_miles"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:orientation="vertical">
+             <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:id="@+id/speed_time"
+                     android:padding="20dp"
+                     android:textSize="30sp"
+                     android:text="00:00:00"/>
+             <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:id="@+id/speed_miles"
+                     android:padding="20dp"
+                     android:textSize="30sp"
+                     android:text="12.34"/>
+         </LinearLayout>
+
+         <LinearLayout
+                 android:padding="20dp"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_toRightOf="@+id/speed_time_miles"
+                 android:orientation="vertical">
+             <TextView
+                     android:id="@+id/speed_type_text"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:textSize="18sp"
+                     android:text=" ~ RUN ~ "
+                     android:layout_gravity="center_vertical"/>
+             <TextView
+                     android:id="@+id/speed_text"
+                     android:text="WORKING..."
+                     android:layout_width="wrap_content"
+                     android:layout_height="match_parent"/>
+         </LinearLayout>
+         <LinearLayout
+                 android:id="@+id/speed_mph_layout"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="vertical"
+                 android:layout_below="@+id/speed_time_miles">
+             <TextView
+                     android:id="@+id/speed_mph"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center_horizontal"
+                     android:textSize="40dp"
+                     android:layout_margin="10dp"
+                     android:text=" 26.34 MPH "/>
+         </LinearLayout>
+         <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@+id/speed_mph_layout">
+             <ToggleButton
+                     android:id="@+id/speed_recognition_start_stop_button"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:textOn="STOP"
+                     android:textOff="START"
+                     android:onClick="startStopPress"
+                     android:checked="false"
+                     />
+             <Button
+                     android:id="@+id/speed_recognition_list_button"
+                     android:layout_weight="1"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="List All"
+                     android:onClick="listPress"
+                     />
+
+ </LinearLayout>
+</RelativeLayout>
+</FrameLayout>
+</android.support.v4.widget.SlidingPaneLayout>

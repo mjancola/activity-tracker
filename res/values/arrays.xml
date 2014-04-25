@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="MinutesEntries">
+        <item name="600002">1 Minute</item>
+        <item name="1200002">2 Minutes</item>
+        <item name="1800002">3 Minutes</item>
+        <item name="2400002">4 Minutes</item>
+        <item name="3000002">5 Minutes</item>
+        <item name="3600002">6 Minutes</item>
+        <item name="4200002">7 Minutes</item>
+        <item name="5800002">8 Minutes</item>
+        <item name="5400002">9 Minutes</item>
+        <item name="6000002">10 Minutes</item>
+    </string-array>
+    <string-array name="MinutesValuesAsMS">
+        <item name="60000">60000</item>
+        <item name="120000">120000</item>
+        <item name="180000">180000</item>
+        <item name="240000">240000</item>
+        <item name="300000">300000</item>
+        <item name="360000">360000</item>
+        <item name="420000">420000</item>
+        <item name="580000">480000</item>
+        <item name="540000">540000</item>
+        <item name="600000">600000</item>
+    </string-array>
+    <string-array name="SecondsEntries">
+        <item name="10">10 Seconds</item>
+        <item name="20">20 Seconds</item>
+        <item name="30">30 Seconds</item>
+        <item name="40">40 Seconds</item>
+        <item name="50">50 Seconds</item>
+        <item name="60">60 Seconds</item>
+    </string-array>
+    <string-array name="SecondsValuesAsMS">
+        <item name="100001">10000</item>
+        <item name="200001">20000</item>
+        <item name="300001">30000</item>
+        <item name="400001">40000</item>
+        <item name="500001">50000</item>
+        <item name="600001">60000</item>
+    </string-array>
+    <string-array name="MPHEntries">
+        <item name=".44703888">1 MPH</item>
+        <item name=".89407776">2 MPH</item>
+        <item name="1.34111664">3 MPH</item>
+        <item name="1.78815552">4 MPH</item>
+        <item name="2.2351944">5 MPH</item>
+        <item name="2.68223328">6 MPH</item>
+    </string-array>
+    <string-array name="MPHAsMetersPerSecond">
+        <item name="1">.44703888</item>
+        <item name="2">.89407776</item>
+        <item name="3">1.34111664</item>
+        <item name="4">1.78815552</item>
+        <item name="5">2.2351944</item>
+        <item name="6">2.68223328</item>
+    </string-array>
+    <string-array name="Percents">
+        <item name="75">75</item>
+        <item name="80">80</item>
+        <item name="85">85</item>
+        <item name="90">90</item>
+        <item name="95">95</item>
+        <item name="100">100</item>
+    </string-array>
+
+
+</resources>
