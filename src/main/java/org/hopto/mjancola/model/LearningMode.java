@@ -11,7 +11,8 @@ public class LearningMode implements GenericMovement
 {
     private static final String TAG = "****" + LearningMode.class.getSimpleName();
     public static final String IDLE = "IDLE";
-    //    private static double testSpeed = (-2.5* .44704);
+    // TEST CODE
+//        private static double testSpeed = (-2.5* .44704);
 
     public static final String FOOT_NAME = "On Foot";
     public static final String TILT      = "Tilting";
@@ -73,7 +74,7 @@ public class LearningMode implements GenericMovement
         settings = SettingsHelper.getInstance(context);
         startedTimeMS = System.currentTimeMillis();
         // TEST CODE
-        //        testSpeed = testSpeed + (5*.44704);
+//                testSpeed = testSpeed + (5*.44704);
         currentSpeed = 0L;
     }
 

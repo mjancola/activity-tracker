@@ -1,16 +1,16 @@
-# Deckard
+# Activity Tracker
 
-[![Build Status](https://secure.travis-ci.org/robolectric/deckard.png?branch=master)](http://travis-ci.org/robolectric/deckard)
+An Intelligent Exercise Tracking Application for Android
 
-Deckard is the simplest possible Android project that uses Robolectric for testing and Maven to build. It has one Activity (with an empty layout), and a Robolectric test that creates that Activity. 
+Villanova Grand Challenges Project
+Spring 2014
 
-Deckard also imports seamlessly into IntelliJ, due to IntelliJ's support for Maven. Just import the pom.xml.
+Description:
+Many smartphone apps exist on the market to track individual walks, runs and bike rides. Is it possible to have just one app to track all your exercise? My Grand Challenges project is a Proof of Concept mobile application (native Android), designed to learn and track when you are exercising. The goal of the project is to determine if it is possible to model and track user activity without consuming the battery in a typical day. The project will begin with a high level project summary with timeline and milestones. The project will conclude with a report summarizing the result and major design issues.
 
 ## Setup
-
 *Note: These instructions assume you have a Java 1.6 [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) installed.*
-
-To start a new Android project:
+*Note: These instructions rely on the Community version of Intellij*
 
 1. Install the [Android SDK](http://developer.android.com/sdk/index.html). On Mac OS X with [Homebrew](http://brew.sh/) just run:
     ```bash
@@ -35,21 +35,5 @@ To start a new Android project:
     (cd maven-android-sdk-deployer && mvn install -P 4.3)
     ```
 
-6. Download Deckard from GitHub:
-    ```bash
-    wget https://github.com/robolectric/deckard/archive/master.zip
-    unzip master.zip
-    mv deckard-master my-new-project
-    ```
+6. Import the project into IntelliJ (or Eclipse) by selecting 'Import Project' in IntelliJ and selecting the project's `pom.xml`. When prompted to pick an SDK you just need to select the Android SDK home and your JDK.
 
-7. In the project directory you should be able to run the tests:
-    ```bash
-    cd my-new-project
-    mvn clean test
-    ```
-        
-8. Optionally, import the project into IntelliJ (or Eclipse) by selecting 'Import Project' in IntelliJ and selecting the project's `pom.xml`. When prompted to pick an SDK you just need to select the Android SDK home and your JDK.
-
-9. Change the names of things from 'Deckard' to whatever is appropriate for your project. Package name, classes, and the AndroidManifest are good places to start.
-
-10. Build an app. Win.

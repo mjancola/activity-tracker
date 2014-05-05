@@ -47,6 +47,7 @@ public class GenericWorkoutTest
     @Test
     public void testNotNull()
     {
+
         assertNotNull("new GenericWorkout should not be null", testGenericWorkout);
     }
 

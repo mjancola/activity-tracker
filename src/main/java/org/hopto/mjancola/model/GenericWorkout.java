@@ -33,10 +33,10 @@ public class GenericWorkout implements GenericMovement
     private static SettingsHelper settings;
 
     // TEST CODE
-    //    private static double testSpeed = (3* .44704);
-    //    private double[] testLatitudes = {40.095253, 40.095270, 40.095270, 40.091867};
-    //    private double[] testLongitudes = {-75.211375, -75.211390, -75.211222, -75.224662};
-    //    private static final double START_LATITUDE    = 40.095253; // 40.095253, -75.211375
+//        private static double testSpeed = (3* .44704);
+//        private double[] testLatitudes = {40.095253, 40.095270, 40.095270, 40.091867};
+//        private double[] testLongitudes = {-75.211375, -75.211390, -75.211222, -75.224662};
+//        private static final double START_LATITUDE    = 40.095253; // 40.095253, -75.211375
 //    private static final double START_LONGITUDE   = -75.211375;
 //    private static final double SMALL_CHANGE_LATITUDE = 40.095270; // 40.095270, -75.211390
 //    private static final double SMALL_CHANGE_LONGITUDE =  -75.211390;
@@ -141,12 +141,14 @@ public class GenericWorkout implements GenericMovement
         {
             // stop no longer pending
             stopPendingTime = NO;
-//
-//            if (exceedsSpeedPendingTime != NO)
-//            {
-//                long pendingTime = System.currentTimeMillis() - exceedsSpeedPendingTime;
+
+            if (exceedsSpeedPendingTime != NO)
+            {
+                long pendingTime = System.currentTimeMillis() - exceedsSpeedPendingTime;
 //                if (pendingTime > workoutType.getTimeThreshold() )
-//                {
+                // must be at increased speed for at least 20 seconds to actually promote
+                if (pendingTime > (20L*1000L) )
+                {
                     // pass the data on to the next type
                     if (workoutType.getNext() != null)
                     {
@@ -158,18 +160,19 @@ public class GenericWorkout implements GenericMovement
                         // discard and start again
                         return new LearningMode(context);
                     }
-//                }
-//                // else noop
-//            }
-//            else
-//            {
-//                exceedsSpeedPendingTime = System.currentTimeMillis();
-//            }
+                }
+                // else noop
+            }
+            else
+            {
+                exceedsSpeedPendingTime = System.currentTimeMillis();
+            }
         }
         else
         {
             // in range
             stopPendingTime = NO;
+            exceedsSpeedPendingTime = NO;
             // TODO
             // add to average
         }
@@ -242,8 +245,8 @@ public class GenericWorkout implements GenericMovement
                         // CAR to WALK - save and start new
                         // WALK to CAR - generally, promote but could be save and start new
 
-                        // if walking, allow promot to run, bike, drive
-                        // else if run, allow promot to bike, drive
+                        // if walking, allow promote to run, bike, drive
+                        // else if run, allow promote to bike, drive
                         // else if bike, allow promote to drive
 
                         if (pendingActivity.equals( LearningMode.CAR_NAME ))
@@ -277,6 +280,12 @@ public class GenericWorkout implements GenericMovement
                         {
                             // just ignore for now - Speed zeros will capture this
                             Log.e( TAG, getName() + ": detected: " + newActivity + " ignoring" );
+                        }
+                        else if ( (pendingActivity.equals( LearningMode.FOOT_NAME )) &&
+                                  (( getName().equals( LearningMode.WALK_NAME )) || (getName().equals( LearningMode.RUN_NAME )) ) )
+                        {
+                            // ignore ON_FOOT detection if this is a walk or run
+                            resetPendingActivity( newActivity );
                         }
                         else // else activity demotion, save and start new
                         {
