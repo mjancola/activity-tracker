@@ -380,8 +380,8 @@ public class SpeedActivity extends FragmentActivity implements SharedPreferences
                         if (movementTrackerHandle != null)
                         {
                             speedType.setText("  ~ " + movementTrackerHandle.getType() + " ~  ");
-                            speedMPH.setText( Converter.formatSpeed( movementTrackerHandle.getSpeed() ));
-                            speedMiles.setText(Converter.formatDistance( movementTrackerHandle.getDistance() ));
+                            speedMPH.setText( Converter.formatSpeed( movementTrackerHandle.getSpeed() ) + " mph");
+                            speedMiles.setText(Converter.formatDistance( movementTrackerHandle.getDistance() ) + " miles");
                             speedDuration.setText( Converter.formatDuration( movementTrackerHandle.getDuration() ) );
                             speedTextView.setText("WORKING");
                         }
