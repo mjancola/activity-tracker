@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          android:versionCode="2"
+          android:versionName="1.0.0-SNAPSHOT"
+          package="org.hopto.mjancola">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <!-- My Location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <application
+            android:name=".ActivityTrackerApplication"
+            android:label="@string/turns_up_in_manage_apps"
+            android:icon="@drawable/ic_launcher">
+	    <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDWfXEhAQ23ntRPtwPIZWnN_ePSgohEfNk"/>
+
+        <activity
+                android:name=".activity.SpeedActivity"
+                android:launchMode="singleTask"
+                android:screenOrientation="portrait"
+                android:label="@string/turns_up_in_shortcuts">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".activity.UserSettingsActivity"
+                android:screenOrientation="portrait"
+                android:label="@string/menu_settings">
+        </activity>
+        <activity
+                android:name=".activity.ActivityTracker"
+                android:screenOrientation="portrait"
+                android:label="@string/turns_up_in_shortcuts">
+        </activity>
+        <activity
+                android:name=".activity.MyLocationDemoActivity"
+                android:label="@string/my_location_demo_label"/>
+        <activity
+                android:name=".activity.ActivityRecognitionActivity"
+                android:label="@string/activity_recognition_label"/>
+        <activity
+                android:name=".activity.ListWorkoutsActivity"
+                android:label="Workouts"/>
+        <activity
+                android:name=".activity.EditWorkoutDAOActivity"
+                android:label="Edit Workout"/>
+	<activity
+            android:name=".activity.LegalInfoActivity"
+            android:label="@string/legal_info"/>
+        <service
+                android:name=".service.ActivityRecognitionService"/>
+        <service
+                android:name=".service.MovementListenerService"/>
+        <service
+                android:name=".service.MovementTrackerService"/>
+    </application>
+</manifest>
